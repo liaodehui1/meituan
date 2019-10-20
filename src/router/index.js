@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '@/pages/Home/home'
-import changecity from '@/pages/ChangeCity/changecity'
+import Home from '@/pages/home/Home'
+import ChangeCity from '@/pages/change-city/ChangeCity'
 Vue.use(Router)
 
 export default new Router({
@@ -9,12 +9,12 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: home
+      component: Home
     },
     {
       path:'/changecity',
       name:'changecity',
-      component:changecity
+      component:ChangeCity
     }
   ]
 })
