@@ -1,7 +1,7 @@
 <template>
   <div class="user-entry">
     <template v-if="user">
-      <router-link to="/userinfo" class="growth-entry user-up">{{username}}</router-link>
+      <router-link to="/userinfo" class="growth-entry user-up">{{user.username}}</router-link>
       <router-link to="/exit" class="extra-entry">退出</router-link>
     </template>
     <template v-else>
@@ -12,12 +12,11 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
-  data() {
-    return {
-      user:null
-    }
-  },
+  computed: mapState({
+    user:state => state.user.userinfo
+  })
 }
 </script>
 

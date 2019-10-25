@@ -1,14 +1,16 @@
 <template>
   <div class="header-bar">
-    <el-row type="flex" justify="space-between" align="middle" class="header-content">
-    <el-col :span="12">
-      <geo />
-      <user />
-    </el-col>
-    <el-col :span="8">
-      <m-nav />
-    </el-col>
-  </el-row>
+    <div class="header-content">
+      <el-row type="flex" justify="space-between" align="middle">
+        <el-col :span="12">
+          <geo />
+          <user />
+        </el-col>
+        <el-col :span="8">
+          <m-nav />
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
@@ -35,11 +37,4 @@ export default {
     color #999999
     &:hover
       color #fe8c00
-.header-content
-  width 1190px
-  height 100%
-  margin 0 auto
-@media screen and (max-width: 1200px)
-  .header-content
-    width 960px 
 </style>
