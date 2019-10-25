@@ -1,14 +1,17 @@
 <template>
   <div class="com-header">
     <header-bar></header-bar>
+    <search-bar></search-bar>
   </div>
 </template>
 
 <script>
 import HeaderBar from '../public/HeaderBar'
+import SearchBar from './search-bar/SearchBar'
 export default {
   components:{
     'header-bar':HeaderBar,
+    'search-bar':SearchBar
   }
 }
 </script>
