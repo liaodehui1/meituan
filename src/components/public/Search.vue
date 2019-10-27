@@ -9,11 +9,11 @@
         @focus="focus = true"
         v-model="searchVal"/>
       <button class="el-button el-button--primary">
-        <i class="el-icon-search" />
+        <i class="header-icon icon-search-new" />
       </button>
     </div>
-    <div class="header-search-suggest">
-      <div class="header-search-noinput" v-show="focus  && !searchVal">
+    <div class="header-search-suggest" v-show="focus">
+      <div class="header-search-noinput" v-show="!searchVal">
         <h6>热门搜索</h6>
         <div class="header-search-hotword">
           <a href="https://www.meituan.com/s/%E8%80%81%E4%B8%89%E6%A0%B7">老三样</a>
@@ -34,7 +34,7 @@
           >金滏山海鲜烤肉自助火锅</a>
         </div>
       </div>
-      <div class="header-search-hasinput" v-show="focus && searchVal">
+      <div class="header-search-hasinput" v-show="searchVal">
         <ul>
           <li>
             <a href="https://nc.meituan.com/s/%E5%86%99%E7%9C%9F/">写真</a>
