@@ -1,6 +1,6 @@
 <template>
   <div class="header-bar-city">
-    <i class="el-icon-location"></i><!-- 去除间隙
+    <i class="header-icon icon-header_location"></i><!-- 去除间隙
     --><span class="current-city">{{currentCity}}</span>
     <router-link to="/changecity" class="change-city">切换城市</router-link>
     <div class="near-city">
