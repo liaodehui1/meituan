@@ -1,7 +1,7 @@
 <template>
   <div class="user-entry">
     <template v-if="user">
-      <router-link to="/userinfo" class="growth-entry user-up">{{user.username}}</router-link>
+      <router-link to="/account/userinfo" class="growth-entry user-up">{{user.username}}</router-link>
       <router-link to="/exit" class="extra-entry">退出</router-link>
     </template>
     <template v-else>
