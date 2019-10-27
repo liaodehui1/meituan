@@ -1,0 +1,26 @@
+@font-face {font-family: "com_header";
+  src: url('header.eot'); /* IE9*/
+  src: url('header.eot') format('embedded-opentype'), /* IE6-IE8 */
+  url('header.woff') format('woff'), /* chrome, firefox */
+  url('header.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('header.svg') format('svg'); /* iOS 4.1- */
+}
+@font-face {
+    font-family: "com_header";
+    src: url("iconfont-search.eot"); /* IE9 */
+    src: url("iconfont-search.eot") format("embedded-opentype"), /* IE6-IE8 */
+    url("iconfont-search.woff") format("woff"), /* chrome、firefox */
+    url("iconfont-search.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    url("iconfont-search.svg#iconfont") format("svg"); /* iOS 4.1- */
+}
+
+.header-icon {
+  font-family:"com_header" !important;
+  font-size:18px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.com-header .icon-search-new:before { content: "\e618"; display: inline-block;}
+.icon-header_location:before { content: "\e60a"; font-size: 12px;}

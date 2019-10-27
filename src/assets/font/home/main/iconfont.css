@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "iconfont";
+  src: url('iconfont.eot'); /* IE9*/
+  src: url('iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 12px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-collection_iconx:before { content: "\e62b"; color:#FFC300; font-size: 24px; }
+
+.icon-order_iconx:before { content: "\e62c"; color:#FFC300; font-size: 24px; }
+
+.icon-more_iconx:before { content: "\e62d"; color:#FFC300; font-size: 24px; }
+
+.icon-money_iconx:before { content: "\e62f"; color:#FFC300; font-size: 24px; }
+
+.icon-ticket_iconx:before { content: "\e630"; color:#FFC300; font-size: 24px; }
+
+.icon-setting_iconx:before { content: "\e631";  font-size: 24px; }
