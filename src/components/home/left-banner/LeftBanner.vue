@@ -22,11 +22,11 @@ export default {
   },
   methods: {
     onActive(index){
-      console.log('active',index)
+      // console.log('active',index)
       this.current = index
     },
     onBlur(){
-      console.log('onBlur')
+      // console.log('onBlur')
       this.current = -1
     }
   }
