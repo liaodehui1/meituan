@@ -2,7 +2,7 @@
   <div class="login-container">
     <div class="default" v-if="!user">
       <div class="head-img-row"><img :src="defaultImg" alt=""></div>
-      <p class="user-name">Hi！你好</p>
+      <p class="user-name ellipsis">Hi！你好</p>
       <router-link to="/register" class="btn-login">注册</router-link>
       <router-link to="/login" class="btn-login">立即登录</router-link>
     </div>
@@ -16,7 +16,7 @@
       </div>
       <div class="head-img-row link" @click="enter"><img :src="user.avatarUrl" alt=""></div>
       <div class="nickname-row">
-        <p class="user-name link" @click="enter">{{user.username}}</p>
+        <p class="user-name link ellipsis" @click="enter">{{user.username}}</p>
       </div>
       <div class="fn-row">
         <div class="fn-item" v-for="(item,index) in itemList" :key="index">
@@ -97,9 +97,6 @@ export default {
         font-size 16px
         color #222222
         font-weight 500
-        white-space nowrap
-        text-overflow ellipsis
-        overflow hidden
         text-align center
         margin 0 auto
         width 6em

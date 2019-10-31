@@ -6,7 +6,7 @@
       </el-col>
     </el-row>
     <el-row type="flex">
-      <el-col :span="14" class="banner-slider">
+      <el-col :span="lspan" class="banner-slider">
         <el-carousel height="240px">
           <el-carousel-item v-for="(item,index) in sliderImgs" :key="index">
             <router-link :to="item.link" class="link">
@@ -15,17 +15,17 @@
           </el-carousel-item>
         </el-carousel>
       </el-col>
-      <el-col :span="4" class="mlr10">
+      <el-col :span="mspan" class="mlr10">
         <router-link to="/xiuxianyule" class="link">
           <div class="pic-1" :style="`background-image:url(${pic1Url})`"></div>
         </router-link>
       </el-col>
-      <el-col :span="6">
+      <el-col :span="rspan">
         <login-card></login-card>
       </el-col>
     </el-row>
     <el-row type="flex" class="mt10">
-      <el-col :span="14" class="df-jsb-ac">
+      <el-col :span="lspan" class="df-jsb-ac">
         <router-link to="/hotel" class="link">
           <div class="pic-2" :style="`background-image:url(${pic2Url})`"></div>
         </router-link>
@@ -33,12 +33,12 @@
           <div class="pic-3" :style="`background-image:url(${pic3Url})`"></div>
         </router-link>
       </el-col>
-      <el-col :span="4" class="mlr10">
+      <el-col :span="mspan" class="mlr10">
         <router-link to="/meishi" class="link">
           <div class="pic-4" :style="`background-image:url(${pic4Url})`"></div>
         </router-link>
       </el-col>
-      <el-col :span="6">
+      <el-col :span="rspan">
         <div class="download-app">
           <div class="qrcode-box"><img :src="downloadQrUrl"></div>
           <p class="app-name">美团APP手机版</p>
@@ -116,11 +116,49 @@ export default {
       pic3Url:require('@/assets/images/16442c19da1f1c4544f794e29d99c92051716.jpg'),
       pic4Url:require('@/assets/images/5b21cddb4bb1cbc3a9c3bce0f726c75940469.jpg'),
       downloadQrUrl:require('@/assets/images/download-qr.png'),
+      lspan:14,
+      mspan:4,
+      rspan:6,
+      mwidth:1200
     }
   },
   components:{
     LoginCard
-  }
+  },
+  mounted() {
+    const that = this
+    that.mwidth = window.innerWidth
+    this.auto(window.innerWidth)
+    window.addEventListener('resize',()=>{
+      // console.log('resize')
+      that.mwidth = window.innerWidth // 包含滚动条
+      // console.log(window.innerWidth)
+      // console.log(document.body.clientWidth) //不包含滚动条
+    })
+  },
+  watch: {
+    mwidth(newVal){
+      // console.log('watch')
+      clearTimeout(this.timer)
+      this.timer = setTimeout(()=>{
+        // console.log('执行')
+        this.auto(newVal)
+      },300)
+    }
+  },
+  methods: {
+    auto(mwidth){
+      if(mwidth <= 1200){
+        this.lspan = 16
+        this.mspan = 0
+        this.rspan = 8
+      }else{
+        this.lspan = 14
+        this.mspan = 4
+        this.rspan = 6
+      }
+    }
+  },
 }
 </script>
 
@@ -166,7 +204,7 @@ export default {
         &:first-child
           margin-right 10px
     .pic-1,.pic-2,.pic-3,.pic-4
-      background-size 100%
+      background-size cover
       background-position 50%
       background-repeat no-repeat
     .pic-1
@@ -205,4 +243,9 @@ export default {
         display none
       .df-jsb-ac
         margin-right 10px
+      .pic-2,.pic-3
+        background-position 0 0
+@media screen and (max-width 1200px)
+  .right-banner
+    width 710px 
 </style>
