@@ -26,3 +26,40 @@
 .icon-ticket_iconx:before { content: "\e630"; color:#FFC300; font-size: 24px; }
 
 .icon-setting_iconx:before { content: "\e631";  font-size: 24px; }
+
+.icon-btn_right:before { content: "\e609"; }
+
+@font-face {
+  font-family: "MFShangHei-Regular";
+  src: url("mfshanghei-regular.eot"); /* IE9 */
+  src: url("mfshanghei-regular.eot") format("embedded-opentype"), /* IE6-IE8 */
+
+  url("mfshanghei-regular.woff") format("woff"), /* chrome、firefox */
+  url("mfshanghei-regular.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+
+  url("mfshanghei-regular.svg#mfshanghei-regular") format("svg"); /* iOS 4.1- */
+  font-style: normal;
+  font-weight: normal;
+}
+
+.mf-shang-hei-regular {
+font-family: "MFShangHei-Regular" !important;
+}
+
+@font-face {
+  font-family: "numbers";
+  src: url("numbers.eot"); /* IE9 */
+  src: url("numbers.eot") format("embedded-opentype"), /* IE6-IE8 */
+
+  url("numbers.woff") format("woff"), /* chrome、firefox */
+  url("numbers.ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+
+  /* url("0a7a1a06d9024662bae768182d2205c5.svg") format("svg"); iOS 4.1- */
+  font-style: normal;
+  font-weight: normal;
+}
+
+.numfont {
+  font-family: "numbers" !important;
+  letter-spacing: -0.5px;
+}
