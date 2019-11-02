@@ -27,8 +27,11 @@
 
 .icon-setting_iconx:before { content: "\e631";  font-size: 24px; }
 
+.icon-btn_left:before { content: "\e608"; }
+
 .icon-btn_right:before { content: "\e609"; }
 
+.icon-star_icon:before { content: "\e606"; }
 @font-face {
   font-family: "MFShangHei-Regular";
   src: url("mfshanghei-regular.eot"); /* IE9 */
