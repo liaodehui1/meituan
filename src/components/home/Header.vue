@@ -1,8 +1,8 @@
 <template>
-  <div class="com-header">
+  <header class="com-header">
     <header-bar></header-bar>
     <search-bar></search-bar>
-  </div>
+  </header>
 </template>
 
 <script>
