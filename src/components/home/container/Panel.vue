@@ -40,6 +40,6 @@ export default {
       max-height 561px
       overflow hidden
     .recommend-panel
-      max-height 737px
+      max-height 753px
       overflow-y hidden
 </style>
