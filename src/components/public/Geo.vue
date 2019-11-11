@@ -19,7 +19,7 @@
 import {mapState,mapActions} from 'vuex'
 export default {
   computed: mapState({
-    currentCity:state => state.city.currentCity,
+    currentCity:state => state.city.currentCity.name,
     nearCity:state => state.city.nearCity,
   }),
   methods: {
