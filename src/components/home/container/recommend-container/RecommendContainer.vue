@@ -11,6 +11,8 @@
 import Nav from '../Nav'
 import Panel from '../Panel'
 import RecommendCard from './RecommendCard'
+import api from '@/api/home'
+
 export default {
   data() {
     return {
@@ -35,8 +37,7 @@ export default {
   },
   methods: {
     fetchData(){
-      fetch(`http://127.0.0.1:8080/static/json/recommend/recommends.json`)
-        .then(res => res.json())
+      api.recommends()
         .then(res => {
           // console.log(res)
           if(res.length){

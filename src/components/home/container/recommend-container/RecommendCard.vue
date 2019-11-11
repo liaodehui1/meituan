@@ -9,15 +9,7 @@
           <div class="title aligned ellipsis">{{cardInfo.title}}</div>
           <div class="score-line aligned">
             <div class="score">
-              <div class="rate-stars">
-                <ul class="rate-stars-ul rate-stars-dark">
-                  <li class="iconfont icon-star_icon" v-for="index in 5" :key="index"></li>
-                </ul>
-                <!-- 星星计算覆盖 -->
-                <ul class="rate-stars-ul rate-stars-light" :style="`width:${cardInfo.rateWidth}%`">
-                  <li class="iconfont icon-star_icon" v-for="index in 5" :key="index"></li>
-                </ul>
-              </div>
+              <rate-star :rateWidth="cardInfo.rateWidth"></rate-star>
             </div>
             <div class="comment-number">{{cardInfo.commentNum}}个评价</div>
           </div>
@@ -40,8 +32,12 @@
 </template>
 
 <script>
+import RateStar from '../../../public/RateStar'
 export default {
-  props:['cardInfo']
+  props:['cardInfo'],
+  components:{
+    RateStar
+  }
 };
 </script>
 
@@ -83,26 +79,7 @@ export default {
             height 24px
           .score
             display inline-block
-            .rate-stars
-              width 84px
-              height 24px
-              position relative
-              display inline-block
-              .rate-stars-ul
-                padding 0
-                text-align left
-                margin 3px 0
-                white-space nowrap
-                &>li
-                  display inline-block
-                  padding 0px 2px
-              .rate-stars-dark
-                color #c3c3c3
-              .rate-stars-light
-                color #ff9900
-                position absolute
-                top 0
-                overflow hidden
+            
           .comment-number
             margin-left 10px
             height 24px
