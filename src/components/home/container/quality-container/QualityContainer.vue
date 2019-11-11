@@ -11,6 +11,8 @@
 import Nav from '../Nav'
 import Panel from '../Panel'
 import QualityCard from './QualityCard'
+import api from '@/api/home.js'
+
 export default {
   data() {
     return {
@@ -42,21 +44,29 @@ export default {
         this.activeTab.push(tab)
       }
       // https://nc.meituan.com/ptapi/getScenesList?theme=quality&tab=all&ci=83&limit=12
-      fetch(`http://127.0.0.1:8080/static/json/quality/${tab}.json`)
-        .then(res => res.json())
+      let params = {
+        theme:'quality',
+        tab,
+        ci:this.$store.state.city.currentCity.id,
+        limit:12
+      }
+      api.getScenesList(params)
         .then(res => {
           // console.log(res)
           if(res.code === 0){
             this.nav.navList = res.tabs
-            if(res.tab.tab !== 'spa'){
-              res.data = res.data.map(item => {
-                if(item.imgUrl.indexOf('w.h/') !== -1){
+            
+            res.data = res.data.map(item => {
+              if(item.imgUrl.indexOf('w.h/') !== -1){
+                if(res.tab.tab !== 'spa'){
                   item.imgUrl = item.imgUrl.replace('w.h/','')
                   item.imgUrl += '@506w_286h_1e_1c'
                 }
-                return item
-              })
-            }
+              }
+              item.iUrl = item.iUrl.replace('//www.meituan.com','')
+              return item
+            })
+            
             this.cardList.push(res)
             this.itemList = res.data
           }
