@@ -35,19 +35,10 @@ export default {
     }
   },
   created() {
-    window.addEventListener('resize',()=>{
-      // console.log('resize')
-      if(this.$refs.ul.clientWidth=== 0 || this.$refs.slider.clientWidth === 0) return;
-      clearTimeout(this.timer)
-      this.timer = setTimeout(() => {
-        // console.log(this.$refs.ul.clientWidth , this.$refs.slider.clientWidth)
-        this.ulWidth = this.$refs.ul.clientWidth
-        this.sliderWidth = this.$refs.slider.clientWidth
-        if(Math.ceil(this.$refs.ul.clientWidth / this.$refs.slider.clientWidth) !== this.paginationCount){
-          this.paginationCount = Math.ceil(this.$refs.ul.clientWidth / this.$refs.slider.clientWidth)
-        }
-      },300)
-    })
+    window.addEventListener('resize',this.listenResize)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize',this.listenResize)
   },
   methods: {
     // 初始化
@@ -84,6 +75,19 @@ export default {
       if(this.activeIndex <= this.paginationCount + 1 && this.activeIndex >1){
         this.activeIndex -= 1
       }
+    },
+    listenResize(){
+      // console.log('resize')
+      if(this.$refs.ul.clientWidth=== 0 || this.$refs.slider.clientWidth === 0) return;
+      clearTimeout(this.timer)
+      this.timer = setTimeout(() => {
+        // console.log(this.$refs.ul.clientWidth , this.$refs.slider.clientWidth)
+        this.ulWidth = this.$refs.ul.clientWidth
+        this.sliderWidth = this.$refs.slider.clientWidth
+        if(Math.ceil(this.$refs.ul.clientWidth / this.$refs.slider.clientWidth) !== this.paginationCount){
+          this.paginationCount = Math.ceil(this.$refs.ul.clientWidth / this.$refs.slider.clientWidth)
+        }
+      },300)
     }
   }
 }

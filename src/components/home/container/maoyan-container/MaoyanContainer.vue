@@ -17,6 +17,8 @@ import Nav from '../Nav'
 import Panel from '../Panel'
 import ScrollWrapper from './ScrollWrapper'
 import MovieCard from './MovieCard'
+import api from '@/api/home'
+
 export default {
   data() {
     return {
@@ -48,7 +50,7 @@ export default {
     MovieCard
   },
   created() {
-    Promise.all([this.getFilms('hot'),this.getFilms('coming')])
+    Promise.all([this.getFilms('Hot'),this.getFilms('Coming')])
       .then(res => {
         // console.log(res)
         this.scrollList = res
@@ -63,12 +65,15 @@ export default {
   methods: {
     getFilms(tab){
       return new Promise((resolve,reject) => {
-        fetch(`http://127.0.0.1:8080/static/json/maoyan/${tab}.json`)
-        .then(res => res.json())
+        let params = {
+          ci:this.$store.state.city.currentCity.id,
+          limit:10
+        }
+        api.getFilms(tab,params)
         .then(res => {
           // console.log(res)
           if(res){
-            res.data[`${tab}`] = res.data[`${tab}`].map(item => {
+            res.data[`${tab}`] = res.data[`${tab.toLowerCase()}`].map(item => {
               if(item.img.indexOf('w.h/') !== -1){
                 item.img = item.img.replace('w.h/','')
                 item.img += '@294w_408h_1e_1c'
