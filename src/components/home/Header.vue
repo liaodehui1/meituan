@@ -18,6 +18,6 @@ export default {
 
 <style lang="stylus" scoped>
   .com-header
-    background-color #fff
-    box-shadow 0 2px 27px 0 rgba(0,0,0,.1)
+    .header-content
+      padding-bottom 35px
 </style>
