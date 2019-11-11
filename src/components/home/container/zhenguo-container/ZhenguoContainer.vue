@@ -11,6 +11,8 @@
 import Nav from '../Nav'
 import Panel from '../Panel'
 import MinsuCard from './MinsuCard'
+import api from '@/api/home'
+
 export default {
   data() {
     return {
@@ -33,16 +35,18 @@ export default {
   },
   created() {
     this.fetchCitys()
-    this.fetchData('420100')
   },
   methods: {
     fetchCitys(){
-      fetch(`http://127.0.0.1:8080/static/json/minsu/citys.json`)
-        .then(res => res.json())
+      let params = {
+        fetchSize:10
+      }
+      api.minsuCitys(params)
         .then(res => {
           if(res.status === 0){
             // console.log(res)
             this.nav.navList = res.cityList
+            this.fetchData(res.cityList[0].cityId)
           }
         })
     },
@@ -53,8 +57,10 @@ export default {
       }else{
         this.activeTab.push(cityId)
       }
-      fetch(`http://127.0.0.1:8080/static/json/minsu/${cityId}.json`)
-        .then(res => res.json())
+      let params = {
+        cityId
+      }
+      api.minsu(params)
         .then(res => {
           // console.log(res)
           if(res.status === 0){
