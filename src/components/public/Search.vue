@@ -34,41 +34,10 @@
           >金滏山海鲜烤肉自助火锅</a>
         </div>
       </div>
-      <div class="header-search-hasinput" v-show="searchVal">
+      <div class="header-search-hasinput" v-show="suggestItems">
         <ul>
-          <li>
-            <a href="https://nc.meituan.com/s/%E5%86%99%E7%9C%9F/">写真</a>
-          </li>
-          <li>
-            <a
-              href="https://nc.meituan.com/s/%E6%98%9F%E5%BA%A7%E7%94%B5%E7%AB%9E%E9%85%92%E5%BA%97/"
-            >星座电竞酒店</a>
-          </li>
-          <li>
-            <a href="https://nc.meituan.com/s/%E6%97%8B%E8%BD%AC%E5%B0%8F%E7%81%AB%E9%94%85/">旋转小火锅</a>
-          </li>
-          <li>
-            <a href="https://nc.meituan.com/s/%E6%B4%97%E6%BE%A1/">洗澡</a>
-          </li>
-          <li>
-            <a href="https://nc.meituan.com/s/%E5%86%99%E7%9C%9F%E8%89%BA%E6%9C%AF%E7%85%A7/">写真艺术照</a>
-          </li>
-          <li>
-            <a href="https://nc.meituan.com/s/%E8%A5%BF%E7%AB%99/">西站</a>
-          </li>
-          <li>
-            <a href="https://nc.meituan.com/s/%E8%A5%BF%E8%A3%85/">西装</a>
-          </li>
-          <li>
-            <a
-              href="https://nc.meituan.com/s/%E5%86%99%E7%9C%9F%20%E6%91%84%E5%BD%B1%E4%B8%AA%E4%BA%BA/"
-            >写真 摄影个人</a>
-          </li>
-          <li>
-            <a href="https://nc.meituan.com/s/%E6%98%9F%E5%BA%A7/">星座</a>
-          </li>
-          <li>
-            <a href="https://nc.meituan.com/s/%E9%B2%9C%E4%B9%8B%E9%86%87/">鲜之醇</a>
+          <li v-for="(item,index) in suggestItems" :key="index">
+            <router-link :to="item.url">{{item.editorWord}}</router-link>
           </li>
         </ul>
       </div>
@@ -95,11 +64,39 @@
 </template>
 
 <script>
+import api from '@/api/public'
+
 export default {
   data() {
     return {
       searchVal:'',
+      suggestItems:null,
       focus:false
+    }
+  },
+  watch: {
+    searchVal(newVal,oldVal){
+      if(newVal === ''){
+        this.suggestItems = null
+      }
+      clearTimeout(this.timer)
+      this.timer = setTimeout(() => {
+        this.suggest(newVal)
+      },100)
+    }
+  },
+  methods: {
+    suggest(keyword) {
+      api.suggest({keyword})
+        .then(res => {
+          if(res.code === 0) {
+            // console.log(res)
+            this.suggestItems = res.data.suggestItems.map(item => {
+              item.url = `/s/${item.query}`
+              return item
+            })
+          }
+        })
     }
   },
 }
