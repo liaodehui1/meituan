@@ -44,7 +44,6 @@ export default {
       api.minsuCitys(params)
         .then(res => {
           if(res.status === 0){
-            // console.log(res)
             this.nav.navList = res.cityList
             this.fetchData(res.cityList[0].cityId)
           }
