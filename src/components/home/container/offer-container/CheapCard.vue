@@ -1,7 +1,7 @@
 <template>
   <router-link class="link cheap-card" :to="cardInfo.iUrl">
     <div class="cheap-img">
-      <img :src="cardInfo.imgUrl" />
+      <img v-lazy="cardInfo.imgUrl" />
     </div>
     <div class="poi-info">
       <div class="title ellipsis">{{cardInfo.title}}</div>
@@ -40,6 +40,7 @@ export default {
       transition background-color .5s
       border-radius 4px
     .cheap-img
+      background-image url(../../../../assets/images/214b8411190e874781fe91dd3096236211567.png)
       background-size cover
       background-position 50% 50%
       max-width 100%

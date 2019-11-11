@@ -11,6 +11,8 @@
 import Nav from '../Nav'
 import Panel from '../Panel'
 import CheapCard from './CheapCard'
+import api from '@/api/home'
+
 export default {
   data() {
     return {
@@ -42,8 +44,13 @@ export default {
         this.activeTab.push(tab)
       }
       // https://nc.meituan.com/ptapi/getScenesList?theme=quality&tab=all&ci=83&limit=12
-      fetch(`http://127.0.0.1:8080/static/json/cheap/${tab}.json`)
-        .then(res => res.json())
+      let params = {
+        theme:'cheap',
+        tab,
+        ci:this.$store.state.city.currentCity.id,
+        limit:20
+      }
+      api.getScenesList(params)
         .then(res => {
           // console.log(res)
           if(res.code === 0){
