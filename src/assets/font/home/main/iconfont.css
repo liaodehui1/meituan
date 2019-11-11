@@ -32,6 +32,8 @@
 .icon-btn_right:before { content: "\e609"; }
 
 .icon-star_icon:before { content: "\e606"; }
+
+.icon-zoom_icon:before { content: "\e604"; }
 @font-face {
   font-family: "MFShangHei-Regular";
   src: url("mfshanghei-regular.eot"); /* IE9 */
