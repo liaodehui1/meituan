@@ -1,20 +1,28 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/pages/home/Home'
-import ChangeCity from '@/pages/change-city/ChangeCity'
 Vue.use(Router)
 
 export default new Router({
+  mode:'history',
   routes: [
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: () => import('@/pages/home/Home')
     },
     {
       path:'/changecity',
       name:'changecity',
-      component:ChangeCity
+      component: () => import('@/pages/change-city/ChangeCity')
+    },
+    {
+      path:'/shop/:id',
+      redirect:'/cate/:id'
+    },
+    {
+      path:'/cate/:id',
+      name:'cate',
+      component: () => import('@/pages/cate/Cate')
     }
   ]
 })
