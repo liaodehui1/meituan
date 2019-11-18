@@ -12,7 +12,12 @@
 
 <script>
 export default {
-  props:['rateWidth']
+  props:['score'],
+  computed: {
+    rateWidth() {
+      return this.score / 5 * 100
+    }
+  },
 };
 </script>
 
