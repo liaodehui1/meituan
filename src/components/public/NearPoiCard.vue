@@ -32,7 +32,7 @@ export default {
       return util.poiUrlSuper(this.nearPoi.firstCate[0],this.nearPoi.showType,this.nearPoi.id)
     },
     imgUrl() {
-      return this.nearPoi.headIcon.replace('/w.h','').concat('@267w_150h_1e_1c')
+      return this.nearPoi.headIcon.replace('/w.h','').concat('@267w_150h_1e_1c') 
     }
   },
 };
