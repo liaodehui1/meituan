@@ -44,8 +44,8 @@ export default {
             res = res.map(item => {
               if(item.imgUrl.indexOf('w.h/') !== -1){
                 item.imgUrl = item.imgUrl.replace('w.h/','')
+                item.imgUrl = item.imgUrl + '@294w_165h_1e_1c'
               }
-              item.rateWidth = item.score / 5.0 * 100
               return item
             })
             this.itemList = res
