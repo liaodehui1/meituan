@@ -33,7 +33,7 @@ import RateStar from "./RateStar";
 export default {
   props:['cardInfo'],
   components: {
-    "rate-star": RateStar
+    "rate-star": RateStar 
   }
 };
 </script>
