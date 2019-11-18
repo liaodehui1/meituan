@@ -15,7 +15,7 @@ export default {
   props:['score'],
   computed: {
     rateWidth() {
-      return this.score / 5 * 100
+      return this.score / 5 * 100 
     }
   },
 };
