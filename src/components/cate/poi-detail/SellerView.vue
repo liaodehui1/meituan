@@ -443,10 +443,4 @@ export default {
             border-radius 4px
             margin-right 5px
             float left
-@keyframes fadeInAni 
-  0%
-    opacity 0
-  100%
-    opacity 1
-
 </style>

@@ -3,7 +3,7 @@
     <div class="seller-info-head">
       <h1 class="seller-name">{{poiInfo.name}}</h1>
       <div class="row">
-        <rate-stars :rateWidth="rateWidth"></rate-stars>
+        <rate-stars :score="poiInfo.score"></rate-stars>
         <span class="score">
           {{poiInfo.score}}分
           <span>人均￥{{poiInfo.avgPrice}}</span>
@@ -80,9 +80,6 @@ export default {
     document.body.removeEventListener('click',this.showQrCode)
   },
   computed: {
-    rateWidth(){
-      return this.poiInfo.score / 5.0 * 100
-    },
     support() {
       return this.poiInfo.wifi || this.poiInfo.park
     }
@@ -171,6 +168,8 @@ export default {
           line-height 20px
         a
           color #666
+          &:hover
+            color #FE8C00
     .support
       border-top 1px solid #e5e5e5
       .service
