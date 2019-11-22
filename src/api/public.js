@@ -5,6 +5,9 @@ export default {
     return fetchGet('/public/suggest',params)
   },
   recommendList(params) {
-    return fetchGet('/public/recmmendList',params)
+    return fetchGet('/public/recommendList',params)
+  },
+  getcomment(params) {
+    return fetchGet('/public/getcomment',params)
   }
 }
