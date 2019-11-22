@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'high-quality';
+  src: url('./high-quality.eot');
+  src: url('./high-quality.eot?#iefix') format('embedded-opentype'),
+  url('./high-quality.woff') format('woff'),
+  url('./high-quality.ttf') format('truetype'),
+  url('./high-quality.svg#iconfont') format('svg');
+}
