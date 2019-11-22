@@ -62,9 +62,9 @@ font-family: "MFShangHei-Regular" !important;
   src: url("numbers.eot") format("embedded-opentype"), /* IE6-IE8 */
 
   url("numbers.woff") format("woff"), /* chrome、firefox */
-  url("numbers.ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+  url("numbers.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
 
-  /* url("0a7a1a06d9024662bae768182d2205c5.svg") format("svg"); iOS 4.1- */
+  url("numbers.svg") format("svg"); /*iOS 4.1-*/
   font-style: normal;
   font-weight: normal;
 }
