@@ -28,7 +28,7 @@ export default {
     let id = this.$route.params.id
     api.cate(id)
       .then(res => {
-        console.log(res)
+        // console.log(res)
         this.cateInfo = res
       })
   }
