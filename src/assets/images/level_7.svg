@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>lable_level_7</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="lable" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="用户等级icon" transform="translate(-284.000000, -118.000000)" fill="#A41E1E">
+            <path d="M286,118 L298,118 C299.104569,118 300,118.895431 300,120 L300,132 C300,133.104569 299.104569,134 298,134 L286,134 C284.895431,134 284,133.104569 284,132 L284,120 L284,120 C284,118.895431 284.895431,118 286,118 L286,118 Z M294,120.999854 L289,127.073053 L289,120.999854 L286,120.999854 L286,121.980376 L287,121.980376 L287,131 L289,131 L296.999635,121.00034 L294,120.999854 Z M294,126 L294,127 L297,127 L297,130.998056 L298,130.998056 L298,126 L294,126 Z" id="lable_level_7"></path>
+        </g>
+    </g>
+</svg>
