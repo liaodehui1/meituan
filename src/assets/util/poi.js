@@ -71,6 +71,17 @@ function poiUrlSuper(id,showType,poiId) {
     return poiUrl(id).concat(poiId,'/')
   }
 }
+
+function formatTime(time) {
+  let date = new Date(time)
+  let year = date.getFullYear()
+  let month = date.getMonth() + 1
+  let day = date.getDate()
+  // console.log(year,month,day)
+  return `${year}年${month}月${day}日`
+}
+
 export default {
-  poiUrlSuper
+  poiUrlSuper,
+  formatTime
 }
