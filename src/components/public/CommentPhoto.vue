@@ -193,7 +193,7 @@ export default {
             background-color #f4f4f4
         .active
           background-color #f4f4f4
-          cursor url(../../assets/images/comment-close-icon.cur) auto
+          cursor url(../../assets/images/comment-close-icon.cur),auto
     &-preview-box
       margin-top 10px
       .comment-photo-preview
@@ -207,12 +207,12 @@ export default {
           z-index 3
         .preview-pre-btn
           left 0
-          cursor url(../../assets/images/left-arrow.cur) auto
+          cursor url(../../assets/images/left-arrow.cur),auto
         .preview-back-btn
           right 0
-          cursor url(../../assets/images/right-arrow.cur) auto
+          cursor url(../../assets/images/right-arrow.cur),auto
         img 
           max-width 460px
           max-height 460px
-          cursor url(../../assets/images/comment-close-icon.cur) auto       
+          cursor url(../../assets/images/comment-close-icon.cur),auto       
 </style>
